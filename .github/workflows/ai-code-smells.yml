@@ -1,0 +1,35 @@
+
+name: AI Code Smell Analysis
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  models: read
+
+jobs:
+  ai-analysis:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Analyze code smells
+        uses: actions/ai-inference@v1
+        with:
+          prompt: |
+            Analyze the Python code modified in this pull request.
+
+            Detect the following code smells:
+
+            1. Long Method
+            2. Duplicated Code
+
+            For each issue found:
+            - File name
+            - Explanation
+            - Refactoring suggestion
