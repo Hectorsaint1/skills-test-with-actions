@@ -1,0 +1,2 @@
+- name: AI Inference
+  uses: actions/ai-inference@v2.1.1
