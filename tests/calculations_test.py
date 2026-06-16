@@ -76,3 +76,4 @@ def test_get_nth_fibonacci_negative_raises():
 def test_get_nth_fibonacci_large_index():
     """Test a larger Fibonacci index for correctness."""
     assert get_nth_fibonacci(20) == 6765
+
